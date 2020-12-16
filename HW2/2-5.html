@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        "use strict";
+
+        /*5 Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        переданного значения операции (использовать switch) выполнить одну из арифметических
+        операций
+        (использовать функции из задания 4) и вернуть полученное значение.*/
+
+        let a = parseInt(Math.random() * 10);
+        let b = parseInt(Math.random() * 10);
+        let array = ["сложение", "умножение", "деление", "вычитание"];
+        let operation = chooseOperation(array);
+
+        function chooseOperation(array) {
+            let operation = "";
+            let n = Math.round(Math.random() * array.length);
+            operation = operation + array[n];
+            return operation;
+        }
+
+        let value = mathOperation(a, b, operation);
+        alert(value);
+
+        function mathOperation(arg1, arg2, operation) {
+            let result;
+            switch (operation) {
+                case "сложение":
+                    function getSum(a, b) {
+                        let sum = a + b;
+                        return sum;
+                    }
+                    result = getSum(arg1, arg2);
+                    break;
+            }
+            switch (operation) {
+                case "умножение":
+                    function getMult(a, b) {
+                        let result = a * b;
+                        return result;
+                    }
+                    result = getMult(arg1, arg2);
+                    break;
+            }
+            switch (operation) {
+                case "вычитание":
+                    function getSubt(a, b) {
+                        let result = a - b;
+                        return result;
+                    }
+                    result = getSubt(arg1, arg2);
+                    break;
+            }
+            switch (operation) {
+                case "деление":
+                    function getDiv(a, b) {
+                        let result = a / b;
+                        return result;
+                    }
+                    result = getDiv(arg1, arg2);
+                    break;
+            }
+            return result;
+        }
+
+    </script>
+
+</body>
+
+</html>
