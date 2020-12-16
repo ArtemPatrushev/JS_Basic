@@ -20,16 +20,13 @@
         //     10 – четное число
 
         for (let i = 0; i <= 10; i++) {
-            let number = 0;
-            number += i;
-            if (number === 0) {
-                console.log(`${number} - это ноль`);
-            } else if (number % 2 === 0) {
-                console.log(`${number} - четное число`);
+            if (i === 0) {
+                console.log(`${i} - это ноль`);
+            } else if (i % 2 === 0) {
+                console.log(`${i} - четное число`);
             } else {
-                console.log(`${number} - нечетное число`);
-            }
-            
+                console.log(`${i} - нечетное число`);
+            }  
         }
 
     </script>

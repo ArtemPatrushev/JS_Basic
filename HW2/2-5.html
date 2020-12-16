@@ -38,41 +38,20 @@
             let result;
             switch (operation) {
                 case "сложение":
-                    function getSum(a, b) {
-                        let sum = a + b;
-                        return sum;
-                    }
-                    result = getSum(arg1, arg2);
-                    break;
+                    return arg1 + arg2;
             }
             switch (operation) {
                 case "умножение":
-                    function getMult(a, b) {
-                        let result = a * b;
-                        return result;
-                    }
-                    result = getMult(arg1, arg2);
-                    break;
+                    return arg1 * arg2;
             }
             switch (operation) {
                 case "вычитание":
-                    function getSubt(a, b) {
-                        let result = a - b;
-                        return result;
-                    }
-                    result = getSubt(arg1, arg2);
-                    break;
+                    return arg1 - arg2;
             }
             switch (operation) {
                 case "деление":
-                    function getDiv(a, b) {
-                        let result = a / b;
-                        return result;
-                    }
-                    result = getDiv(arg1, arg2);
-                    break;
+                    return arg1 / arg2;
             }
-            return result;
         }
 
     </script>

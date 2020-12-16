@@ -49,48 +49,33 @@
             },
         ];
 
-        products.filter(checkPhoto);
+        // Сделал по 2 варианта. Сначала пришел в голову более длинный, затем привел к более лаконичному
 
-        function checkPhoto(obj) {
-            let photo = obj.photos;
-            if (photo === undefined) {
-                console.log(undefined);
-            } else if (photo.length > 0) {
-                console.log(obj)
-            }
-        }
+        products.filter((obj) => obj.photos?.length);
 
-        products.sort(priceSort);
+        // products.filter(checkPhoto);
+        // function checkPhoto(obj) {
+        //     let photo = obj.photos;
+        //     if (photo === undefined) {
+        //         console.log(undefined);
+        //     } else if (photo.length > 0) {
+        //         console.log(obj)
+        //     }
+        // }
 
-        function priceSort(a, b) {
-            if (a.price > b.price) {
-                return 1;
-            }
-            if (a.price < b.price) {
-                return -1;
-            }
-            return 0;
-        }
-        console.log(products);
+        products.sort((a, b) => a.price - b.price);
 
-        // var items = [
-        //         { name: 'Edward', value: 21 },
-        //         { name: 'Sharpe', value: 37 },
-        //         { name: 'And', value: 45 },
-        //         { name: 'The', value: -12 },
-        //         { name: 'Magnetic' },
-        //         { name: 'Zeros', value: 37 }
-        //     ];
-        //     items.sort(function (a, b) {
-        //         if (a.name > b.name) {
-        //             return 1;
-        //         }
-        //         if (a.name < b.name) {
-        //             return -1;
-        //         }
-        //         // a должно быть равным b
-        //         return 0;
-        //     });
+        // product.sort(priceSort);
+        // function priceSort(a, b) {
+        //     if (a.price > b.price) {
+        //         return 1;
+        //     }
+        //     if (a.price < b.price) {
+        //         return -1;
+        //     }
+        //     return 0;
+        // }
+        // console.log(products);
 
     </script>
 </body>

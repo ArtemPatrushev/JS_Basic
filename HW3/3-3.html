@@ -31,22 +31,14 @@
             },
         ];
         
-        function getDiscount(object) {
-            let price = object.price;
-            let discount = 15;
-            let result = price - (price / 100 * discount);
-            console.log(result);
-        }
-
-        products.forEach(getDiscount);
-
-       
+        // function getDiscount(object) {
+        //     console.log(object.price - (object.price / 100 * 15));
+        // }
 
 
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
+        products.forEach((obj) => console.log(obj.price * 0.85));
 
+        
 
     </script>
 

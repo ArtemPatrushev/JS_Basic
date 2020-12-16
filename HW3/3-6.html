@@ -19,11 +19,20 @@
         //     xxxx
         //     xxxxx
         
+
+// два варианта
+
+        //1
         let x = 'x';
         let str = '';
         for (let i = 0; str.length < 20; i++) {
             str += x;
             console.log(str);
+        }
+
+        //2
+        for (let i = ''; i.length < 20; i += 'x') {
+            console.log(i);
         }
 
 
