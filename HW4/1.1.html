@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 1.1
+        //     Сделайте в стиле es5, а затем в стиле es6(по аналогии из урока), конструктор Product, который принимает
+        //     параметры name и price, сохраните их как свойства объекта.Также объекты типа Product должны иметь метод
+        //     make25PercentDiscount, который будет уменьшать цену в объекте на 25 %.Имейте в виду, что метод
+        //     make25PercentDiscount не должен быть внутри функции - конструктора, и также не нужно создавать отдельный
+        //     объект - прототип(как объект transport в уроке).
+
+        'use strict';
+
+        // es5
+
+        function Product (name, price) {
+            this.name = name;
+            this.price = price;
+        }
+        Product.prototype.makeDiscount = function (discount) {
+            this.price = this.price - (this.price / 100 * discount);
+        };
+
+        let products = [
+            new Product('Coca-Cola', 150),
+            new Product('Lays', 200),
+            new Product('Nutella', 450)
+        ]
+
+        for (let product of products) {
+            product.makeDiscount(25);
+        }
+
+        // es6
+
+        class Item {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+            getDiscount(discount) {
+                this.price = this.price - (this.price / 100 * discount);
+            }
+        }
+
+        let items = new Item('phone', 25000);
+        items.getDiscount(25);
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        // 1
+//             (это задание делайте по желанию) Написать функцию, преобразующую число в объект.Передавая на
+//             вход число в диапазоне[0, 999],
+//                 мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+//             - единицы(в свойстве units)
+//                 - десятки(в свойстве tens)
+//                 - сотни(в свойстве hundereds)
+//             Например, для числа 45 мы должны получить следующий объект:
+//             {
+//                 units: 5, //это единицы
+//                     tens: 4, //это десятки
+//                         hundreds: 0, //это сотни
+// }
+//             Если число было передано вне[0, 999] диапазона, не целое число или вообще не число,
+//                 необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+
+        // function getObj(number) {
+        //     let numArr = number.split('');
+        //     let numObj = {};
+        //     if (isNaN(number)) {
+        //         console.log('Число необходимо ввести цифрами');
+        //         return {};
+        //     } else if(numArr.length < 0) {
+        //         console.log('Число должно быть больше 0');
+        //         return {};
+        //     } else if(numArr.length > 3) {
+        //         console.log('Число должно быть меньше 1000');
+        //         return {};
+        //     } else (Number.isInteger(number)) { // пробема с этим - не распознает числа
+        //         numObj['сотни'] = +numArr[0];
+        //         numObj['десятки'] = +numArr[1];
+        //         numObj['единицы'] = +numArr[2];
+        //         return numObj;
+        //     }
+        // }
+
+        // let number = prompt('Введите число от 1 до 999');
+        // let obj = getObj(+number);
+        // console.log(obj)
+        
+        
+        'use strict';
+
+        // К проверке
+
+        const parseNum = (number) => {
+            if (!Number.isInteger(number)) {
+                console.log('Не целое число');
+                return;
+            }
+            if (number < 0 || number > 999) {
+                console.log('Число вне диапазона');
+                return;
+            }
+            return {
+                units: number % 10,
+                tens: Math.trunc((number / 10) % 10),
+                hundereds: Math.trunc(number / 100),
+            };
+        };
+
+        let number1 = +prompt('Введите число от 1 до 999');
+        let object = parseNum(number1);
+        console.log(object)
+
+
+    </script>
+
+</body>
+</html>
